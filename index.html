@@ -15,15 +15,65 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-custom-tertiary px-5 mb-3 sticky-top">
+        <nav class="navbar navbar-expand-lg bg-nav-custom-tertiary px-5 mb-3 sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="index.html"><i class="bi bi-table"></i> Lista de Tareas </a>
             </div>
+            <button type="button" class="btn btn-warning text-dark">Cargar Tarea</button>
         </nav>
     </header>
-    <main class="container">
+
+    <h2 class="text-center py-3 text-dark">Cargar Tarea</h2>
+
+    <section class="container my-3 px-3 bg-form-secondary-subtle-transparent">
+        <form class="row pt-2">
+            <!-- Tarea -->
+            <div class="col-12 mb-2">
+                <label for="tarea" class="form-label"> Detalle Tarea *</label>
+                <!-- <input type="text" class="form-control" id="tarea" minlength="5" maxlength="200" placeholder="Escriba detalle tarea ..." required> -->
+                <textarea class="form-control" placeholder="Escriba detalle tarea aquí" id="detalleTarea" minlength="5"
+                    maxlength="200" required></textarea>
+            </div>
+            <!-- Botón enviar -->
+            <div class="col-12 my-3">
+                <button type="submit" class="btn btn-warning text-secondary px-4">Enviar</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Lista de Tareas -->
+    <section class="container mb-3">
+        <h2 class="text-center py-3 text-dark">Lista de Tareas</h2>
+
+        <table class="table table-striped table-hove">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tarea</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>tarea 1</td>
+                    <td><button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>tarea 2</td>
+                    <td><button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>tarea 3</td>
+                    <td><button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     </main>
-    <footer class="bg-custom-tertiary py-2 text-center">
+    <footer class="bg-nav-custom-tertiary py-2 text-center">
         <p>&copy;Todos los derechos reservados</p>
         <p>Valentina Iramain 2025</p>
     </footer>
