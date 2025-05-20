@@ -5,36 +5,17 @@ function agregarTarea(e) {
     e.preventDefault(); //evitar que recargue la pagina
 
     //busca el tbody de la tabla de tareas
-    const tablaTareas = document.querySelector('tbody')
+    const tablaTareas = document.querySelector('.list-group')
+    console.log(tablaTareas)
 
     //seleccionar el texto que escribio en el formulario
     const tarea = document.querySelector('#tareaInput').value
     console.log('tarea:'+tarea)
 
-    // inserta nueva tarea
-    tablaTareas.innerHTML += `<tr>
-                                <td class="col-10 justify-content-start align-item-center">${tarea}</td>
-                                <td class="col-2 justify-content-center align-item-center"><button class="btn btn-danger" onclick('eliminarTarea()')><i class="bi bi-trash3-fill"></i></button></td>
-                              </tr>`;
-
+    tablaTareas.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-start">${tarea}<button class="btn btn-danger d-flex justify-content-between align-items-end" onclick('eliminarTarea()')><i class="bi bi-trash3-fill"></i></button></li>`
     // blanquer input
     formularioTareas.reset();
 }
-
-//elimina tarea
-function eliminarTarea() {
-    console.log('en funcion eliminar')
-
-    const tareaAEliminar = document.querySelector('tr')
-    console.log('tr a eliminar:')
-    console.log(tareaAEliminar)
-
-    // console.log(tareaAEliminar)
-    // if (tareaAEliminar) {
-    //     tareaAEliminar.remove();
-    // }
-}
-
 
 
 //-------------------eventos---------------------
@@ -42,7 +23,6 @@ function eliminarTarea() {
 // lista tareas
 const formularioTareas = document.querySelector('#tareaForm')
 formularioTareas.addEventListener('submit', agregarTarea)
-
 
 
 
